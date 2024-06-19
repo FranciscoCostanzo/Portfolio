@@ -1,0 +1,271 @@
+---
+import Instagram from "../../public/assets/logos/Instagram.svg";
+import Linkedin from "../../public/assets/logos/Linkedin.svg";
+import Mail from "../../public/assets/logos/Mail.svg";
+import Github from "../../public/assets/logos/Github.svg";
+import Yo from "../../public/assets/yo.jpg";
+
+const enlacesContacto = [
+  {
+    href: "https://www.instagram.com/tuusuario",
+    icon: Instagram.src,
+    alt: "Instagram",
+  },
+  {
+    href: "https://www.linkedin.com/in/tuusuario",
+    icon: Linkedin.src,
+    alt: "LinkedIn",
+  },
+  {
+    href: "mailto:tuemail@example.com",
+    icon: Mail.src,
+    alt: "Correo Electrónico",
+  },
+  {
+    href: "https://github.com/tuusuario",
+    icon: Github.src,
+    alt: "GitHub",
+  },
+];
+---
+
+<header>
+  <div class="header__bar">
+    <div class="menu__burger">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-menu-2"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M4 6l16 0"></path>
+        <path d="M4 12l16 0"></path>
+        <path d="M4 18l16 0"></path>
+      </svg>
+    </div>
+    <span class="nombre">Francisco Costanzo</span>
+  </div>
+  <div class="menu__content">
+    <img src={Yo.src} alt="Tu Foto" />
+    <nav>
+      <a href="#about">Acerca de</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <div class="enlaces-contacto">
+      {
+        enlacesContacto.map((enlace) => (
+          <a
+            href={enlace.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={enlace.alt}
+          >
+            <span class="tooltip">{enlace.alt}</span>
+            <img src={enlace.icon} alt={`Logo de ${enlace.alt}`} />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  $color-nevada: (
+    50: #f5f6f6,
+    100: #e5e8e8,
+    200: #ced3d3,
+    300: #abb4b5,
+    400: #818d8f,
+    500: #626d6f,
+    600: #576063,
+    700: #4b5153,
+    800: #424748,
+    900: #3a3e3f,
+    950: #242728,
+  );
+
+  @function color-nevada($shade) {
+    @return map-get($color-nevada, $shade);
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 1rem;
+    background-color: color-nevada(800);
+    color: color-nevada(50);
+    width: 250px;
+    height: 100vh;
+    transition: width 0.3s ease;
+    @media (max-width: 1000px) {
+      position: relative;
+      height: auto;
+      width: 100%;
+    }
+
+    .header__bar {
+      display: none;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      background-color: color-nevada(800);
+      padding: 1rem;
+      @media (max-width: 1000px) {
+        display: flex;
+      }
+      .nombre {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .menu__burger {
+        transition: 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        border-radius: 6px;
+        border: 2px solid #00000000;
+        cursor: pointer;
+        svg {
+          stroke: color-nevada(50);
+          height: 40px;
+          width: 40px;
+        }
+
+        &:hover{
+          background-color: color-nevada(50);
+          border: 2px solid color-nevada(50);
+          svg{
+          stroke: color-nevada(950);
+
+          }
+        }
+      }
+    }
+
+    .active{
+      display: flex;
+    }
+
+    .menu__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
+
+
+      img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 2rem;
+        transition: 0.3s ease;
+        &:hover {
+          width: 160px;
+          height: 160px;
+        }
+      }
+  
+      nav {
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 10rem;
+  
+        a {
+          width: 100%;
+          text-align: start;
+          text-decoration: none;
+          color: color-nevada(50);
+          font-size: 20px;
+          padding: 10px;
+          border-radius: 6px;
+          transition: 0.3s ease;
+  
+          &:hover {
+            background-color: color-nevada(50);
+            color: color-nevada(950);
+            scale: 1.03;
+          }
+        }
+      }
+  
+      .enlaces-contacto {
+        display: flex;
+        gap: 1rem;
+        margin-top: auto;
+  
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+  
+          img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+          }
+  
+          .tooltip {
+            position: absolute;
+            bottom: 4.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: color-nevada(950);
+            color: color-nevada(50);
+            padding: 0.4rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+          }
+  
+          &:hover img {
+            transform: scale(1.1);
+          }
+  
+          &:hover .tooltip {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuContent = document.querySelector(".menu-content");
+
+    menuToggle.addEventListener("click", function () {
+      menuContent.style.display = "flex";
+      menuContent.style.setProperty('display', 'flex', 'important'); // Aplicar prioridad al display
+    });
+  });
+</script>
