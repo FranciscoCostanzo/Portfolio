@@ -12,17 +12,17 @@ const enlacesContacto = [
     alt: "Instagram",
   },
   {
-    href: "https://www.linkedin.com/in/tuusuario",
+    href: "https://www.linkedin.com/in/francisco-costanzo-102207261/",
     icon: Linkedin.src,
     alt: "LinkedIn",
   },
   {
-    href: "mailto:tuemail@example.com",
+    href: "mailto:franciscocostanzo663@gmail.com",
     icon: Mail.src,
     alt: "Correo Electrónico",
   },
   {
-    href: "https://github.com/tuusuario",
+    href: "https://github.com/CarpinchoRecu",
     icon: Github.src,
     alt: "GitHub",
   },
@@ -51,6 +51,38 @@ const enlacesContacto = [
       </svg>
     </div>
     <span class="nombre">Francisco Costanzo</span>
+    <div class="btn__contacto">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-user"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#f5f6f6"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+      </svg>
+      <div class="contenido__contacto">
+        {
+          enlacesContacto.map((enlace) => (
+            <a
+              href={enlace.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={enlace.alt}
+            >
+              <img src={enlace.icon} alt={`Logo de ${enlace.alt}`} />
+            </a>
+          ))
+        }
+      </div>
+    </div>
   </div>
   <div class="menu__content">
     <img src={Yo.src} alt="Tu Foto" />
@@ -92,6 +124,7 @@ const enlacesContacto = [
     800: #424748,
     900: #3a3e3f,
     950: #242728,
+    shadow: #2427284d,
   );
 
   @function color-nevada($shade) {
@@ -111,6 +144,7 @@ const enlacesContacto = [
     width: 250px;
     height: 100vh;
     transition: width 0.5s ease;
+
     @media (max-width: 1000px) {
       position: relative;
       height: auto;
@@ -118,7 +152,8 @@ const enlacesContacto = [
       height: 0;
       padding: 0;
       margin: 0;
-    align-items: start;
+      align-items: start;
+      z-index: 2;
     }
 
     .header__bar {
@@ -131,6 +166,87 @@ const enlacesContacto = [
       height: 70px;
       @media (max-width: 1000px) {
         display: flex;
+      }
+      .btn__contacto {
+        z-index: 2;
+        display: none;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid color-nevada(50);
+        border-radius: 50%;
+        padding: 3px;
+        cursor: pointer;
+
+        svg {
+          stroke: color-nevada(50);
+          height: 30px;
+          width: 30px;
+        }
+
+        .contenido__contacto {
+          position: absolute;
+          box-shadow: 0 2px 20px 1px color-nevada(shadow);
+          background-color: color-nevada(800);
+          padding: 8px;
+          border-radius: 8px;
+          display: none;
+          flex-direction: column;
+          gap: 1.1rem;
+          margin-top: 60px;
+          a {
+            display: flex;
+            position: relative;
+            align-items: center;
+
+            img {
+              width: 30px;
+              height: 30px;
+              transition: 0.3s ease;
+            }
+          }
+        }
+
+        @media (max-width: 1000px) {
+          display: flex !important;
+
+          .contenido__contacto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -130%) scale(0);
+            transform-origin: center;
+            box-shadow: 0 2px 20px 1px rgba(36, 39, 40, 0.3);
+            background-color: #424748;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+          z-index: 0;
+
+            a{
+              display: none;
+            }
+          }
+        }
+        .active2 {
+          z-index: 0!important;
+          opacity: 1;
+          transform: translate(-50%, -10%) scale(1);
+          border-radius: 8px;
+          width: auto;
+          height: auto;
+          padding: 8px;
+          display: flex !important;
+          a{
+            display: flex;
+          }
+        }
       }
       .nombre {
         font-size: 1.5rem;
@@ -150,6 +266,16 @@ const enlacesContacto = [
           stroke: color-nevada(50);
           height: 40px;
           width: 40px;
+        }
+
+        @media (max-width: 1000px) {
+          &:hover {
+            background-color: #00000000 !important;
+            border: 2px solid #00000000 !important;
+            svg {
+              stroke: color-nevada(50) !important;
+            }
+          }
         }
 
         &:hover {
@@ -174,9 +300,9 @@ const enlacesContacto = [
       align-items: center;
       width: 100%;
       @media (max-width: 1000px) {
+        text-align: center;
         margin: 0;
         padding: 0;
-        width: 250px;
         display: none;
       }
 
@@ -191,8 +317,8 @@ const enlacesContacto = [
           height: 110px;
           margin-bottom: 1rem;
           &:hover {
-            width: 110px!important;
-            height: 110px!important;
+            width: 110px !important;
+            height: 110px !important;
           }
         }
 
@@ -220,6 +346,9 @@ const enlacesContacto = [
           padding: 10px;
           border-radius: 6px;
           transition: 0.3s ease;
+          @media (max-width: 1000px) {
+            text-align: center;
+          }
 
           &:hover {
             background-color: color-nevada(50);
@@ -233,15 +362,26 @@ const enlacesContacto = [
         display: flex;
         gap: 1rem;
         margin-top: auto;
+        @media (max-width: 1000px) {
+          display: none;
+        }
         a {
           position: relative;
           display: flex;
           align-items: center;
 
+          &:hover img {
+            scale: 1.1;
+          }
+
+          &:hover .tooltip {
+            opacity: 1;
+          }
+
           img {
             width: 30px;
             height: 30px;
-            transition: transform 0.3s ease;
+            transition: 0.3s ease;
           }
 
           .tooltip {
@@ -256,16 +396,8 @@ const enlacesContacto = [
             font-size: 0.8rem;
             white-space: nowrap;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: 0.3s ease;
             pointer-events: none;
-          }
-
-          &:hover img {
-            transform: scale(1.1);
-          }
-
-          &:hover .tooltip {
-            opacity: 1;
           }
         }
       }
@@ -277,9 +409,15 @@ const enlacesContacto = [
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu__burger");
     const menuContent = document.querySelector(".menu__content");
+    const btnContacto = document.querySelector(".btn__contacto");
+    const contactoContenido = document.querySelector(".contenido__contacto");
 
     menuToggle.addEventListener("click", function () {
       menuContent.classList.toggle("active");
+    });
+
+    btnContacto.addEventListener("click", function () {
+      contactoContenido.classList.toggle("active2");
     });
   });
 </script>
