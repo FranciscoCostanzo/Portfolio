@@ -164,11 +164,11 @@ const enlacesContacto = [
       background-color: color-nevada(800);
       padding: 1rem;
       height: 70px;
+
       @media (max-width: 1000px) {
         display: flex;
       }
       .btn__contacto {
-        z-index: 2;
         display: none;
         position: relative;
         text-align: center;
@@ -227,15 +227,10 @@ const enlacesContacto = [
             transition: all 0.3s ease;
             width: 50px;
             height: 50px;
-          z-index: 0;
-
-            a{
-              display: none;
-            }
+            z-index: -1;
           }
         }
         .active2 {
-          z-index: 0!important;
           opacity: 1;
           transform: translate(-50%, -10%) scale(1);
           border-radius: 8px;
@@ -243,9 +238,6 @@ const enlacesContacto = [
           height: auto;
           padding: 8px;
           display: flex !important;
-          a{
-            display: flex;
-          }
         }
       }
       .nombre {
@@ -288,22 +280,20 @@ const enlacesContacto = [
       }
     }
 
-    .active {
-      display: flex !important;
-      justify-content: center !important;
-    }
-
     .menu__content {
       background-color: color-nevada(800);
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
+      z-index: -2;
       @media (max-width: 1000px) {
         text-align: center;
         margin: 0;
         padding: 0;
-        display: none;
+        transform: translate(0, -90%) scale(1);
+        transition: all 0.3s ease;
+        opacity: 0;
       }
 
       img {
@@ -401,6 +391,13 @@ const enlacesContacto = [
           }
         }
       }
+    }
+
+    .active {
+      display: flex;
+      justify-content: center;
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
     }
   }
 </style>

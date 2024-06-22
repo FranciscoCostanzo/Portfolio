@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portfolio - Francisco Costanzo">
-  <h1>Portfolio - Francisco Costanzo</h1>
+  <h1>Portfolio <span class="linea">- Francisco Costanzo</span></h1>
   <div class="btns__container">
     <p>Experiencia en:</p>
     <a href="" class="btn">Programación</a>
@@ -12,26 +12,34 @@ import Layout from "../layouts/Layout.astro";
   <div class="sobre__mi">
     <h2 class="sobre__mi__titulo">Sobre Mí</h2>
     <p class="sobre__mi__titulo__contenido">
-      Soy <span class="negrita">Francisco Costanzo</span>, un profesional apasionado por el <span class="negrita">diseño gráfico</span> y
-      la <span class="negrita">programación</span>. A lo largo de mi carrera, he tenido la oportunidad de
-      trabajar en diversos proyectos que me han permitido desarrollar una amplia
-      gama de habilidades.
+      Soy <span class="negrita">Francisco Costanzo</span>, un profesional
+      apasionado por el <span class="negrita">diseño gráfico</span> y la <span
+        class="negrita">programación</span
+      >. A lo largo de mi carrera, he tenido la oportunidad de trabajar en
+      diversos proyectos que me han permitido desarrollar una amplia gama de
+      habilidades.
     </p>
     <p class="sobre__mi__titulo__contenido">
-      Mis cualidades incluyen la <span class="negrita">atención al detalle</span>, la <span class="negrita">creatividad</span> y la
-      capacidad de <span class="negrita">resolver problemas complejos</span> de manera efectiva. Sin embargo,
-      también he enfrentado desafíos, como <span class="negrita">equilibrar múltiples proyectos</span> al
-      mismo tiempo y adaptarme rápidamente a <span class="negrita">nuevas tecnologías</span>.
+      Mis cualidades incluyen la <span class="negrita">atención al detalle</span
+      >, la <span class="negrita">creatividad</span> y la capacidad de <span
+        class="negrita">resolver problemas complejos</span
+      > de manera efectiva. Sin embargo, también he enfrentado desafíos, como <span
+        class="negrita">equilibrar múltiples proyectos</span
+      > al mismo tiempo y adaptarme rápidamente a <span class="negrita"
+        >nuevas tecnologías</span
+      >.
     </p>
     <p class="sobre__mi__titulo__contenido">
-      He trabajado en proyectos desde la <span class="negrita">conceptualización hasta la
-      implementación</span>, asegurándome de cumplir con los plazos y superar las
-      expectativas de los clientes. Mi recorrido profesional me ha permitido
-      <span class="negrita">crecer y aprender</span> constantemente, y siempre estoy buscando nuevas
-      oportunidades para <span class="negrita">mejorar y expandir</span> mis conocimientos.
+      He trabajado en proyectos desde la <span class="negrita"
+        >conceptualización hasta la implementación</span
+      >, asegurándome de cumplir con los plazos y superar las expectativas de
+      los clientes. Mi recorrido profesional me ha permitido
+      <span class="negrita">crecer y aprender</span> constantemente, y siempre estoy
+      buscando nuevas oportunidades para <span class="negrita"
+        >mejorar y expandir</span
+      > mis conocimientos.
     </p>
   </div>
-  
 </Layout>
 
 <style lang="scss">
@@ -60,6 +68,14 @@ import Layout from "../layouts/Layout.astro";
     font-weight: bold;
     margin-bottom: 1.5rem;
     text-align: left;
+
+    @media (max-width: 1000px) {
+      .linea {
+        display: flex;
+        opacity: 0;
+        height: 10px;
+      }
+    }
   }
 
   .btns__container {
@@ -77,12 +93,13 @@ import Layout from "../layouts/Layout.astro";
       color: color-nevada(50);
       border: 1px solid color-nevada(950);
       padding: 0.5rem 1rem;
-      margin: 0.5rem;
+      margin-right: 20px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 20px;
       transition: all 0.3s ease;
       display: inline-block;
+      font-weight: 500;
 
       &:hover {
         box-shadow: 0 2px 20px 1px color-nevada(shadow);
@@ -94,60 +111,67 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .sobre__mi {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: 0;
-  text-align: left;
+    padding: 1rem 0;
+    max-width: 800px;
+    margin: 0;
+    text-align: left;
 
-  .sobre__mi__titulo {
-    color: color-nevada(950);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  .sobre__mi__titulo__contenido {
-    color: color-nevada(900);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    text-align: justify;
-
-    .negrita {
+    .sobre__mi__titulo {
+      color: color-nevada(950);
+      font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 1rem;
     }
-  }
-}
-
-@media (max-width: 1000px) {
-  .sobre__mi {
-    text-align: center;
-    margin: 0 auto;
 
     .sobre__mi__titulo__contenido {
+      color: color-nevada(900);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
       text-align: justify;
-      margin: 0 auto;
+
+      .negrita {
+        font-weight: bold;
+      }
     }
   }
-}
-
 
   @media (max-width: 1000px) {
     h1 {
       text-align: center;
     }
-
-    .btns__container {
+    .btns__container{
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      
+
       p {
-        text-align: center;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin: 0 0 14px 0;
+    }
+    }
+    .sobre__mi {
+      padding-top: 30px;
+      border-top: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+
+      .sobre__mi__titulo__contenido {
+        text-align: justify;
       }
     }
   }
 </style>
-
-<script>
-  const AnchoVP = window.innerWidth;
-  console.log(AnchoVP)
-</script>
