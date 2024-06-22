@@ -217,7 +217,7 @@ const enlacesContacto = [
             transform: translate(-50%, -130%) scale(0);
             transform-origin: center;
             box-shadow: 0 2px 20px 1px rgba(36, 39, 40, 0.3);
-            background-color: #424748;
+            background-color: color-nevada(900);
             padding: 8px;
             border-radius: 50%;
             display: flex;
@@ -228,6 +228,10 @@ const enlacesContacto = [
             width: 50px;
             height: 50px;
             z-index: -1;
+            a{
+              width: 90%;
+              opacity: 0;
+            }
           }
         }
         .active2 {
@@ -238,11 +242,20 @@ const enlacesContacto = [
           height: auto;
           padding: 8px;
           display: flex !important;
+          a{
+            opacity: 1;
+          }
         }
       }
+
+
       .nombre {
-        font-size: 1.5rem;
+        display: none;
+        font-size: 20px;
         font-weight: bold;
+        @media (max-width: 1000px) {
+          display: block; 
+      }
       }
 
       .menu__burger {
@@ -327,6 +340,10 @@ const enlacesContacto = [
         gap: 1rem;
         margin-bottom: 10rem;
 
+        @media (max-width: 1000px) {
+          align-items: center;
+        }
+
         a {
           width: 100%;
           text-align: start;
@@ -338,6 +355,9 @@ const enlacesContacto = [
           transition: 0.3s ease;
           @media (max-width: 1000px) {
             text-align: center;
+            border-radius:9px;
+            width: 90%;
+            background-color: color-nevada(950);
           }
 
           &:hover {
