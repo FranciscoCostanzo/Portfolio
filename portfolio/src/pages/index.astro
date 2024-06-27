@@ -1,45 +1,54 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+const seccionesIndex = [
+  { href: "/", texto: "Sobre Mí" },
+  { href: "/cv", texto: "CV" },
+];
 ---
 
 <Layout title="Portfolio - Francisco Costanzo">
-  <h1>Portfolio <span class="linea">- Francisco Costanzo</span></h1>
-  <div class="btns__container">
-    <p>Experiencia en:</p>
-    <a href="" class="btn">Programación</a>
-    <a href="" class="btn">Diseño Gráfico</a>
-  </div>
-  <div class="sobre__mi">
-    <h2 class="sobre__mi__titulo">Sobre Mí</h2>
-    <p class="sobre__mi__titulo__contenido">
-      Soy <span class="negrita">Francisco Costanzo</span>, un profesional
-      apasionado por el <span class="negrita">diseño gráfico</span> y la <span
-        class="negrita">programación</span
-      >. A lo largo de mi carrera, he tenido la oportunidad de trabajar en
-      diversos proyectos que me han permitido desarrollar una amplia gama de
-      habilidades.
-    </p>
-    <p class="sobre__mi__titulo__contenido">
-      Mis cualidades incluyen la <span class="negrita">atención al detalle</span
-      >, la <span class="negrita">creatividad</span> y la capacidad de <span
-        class="negrita">resolver problemas complejos</span
-      > de manera efectiva. Sin embargo, también he enfrentado desafíos, como <span
-        class="negrita">equilibrar múltiples proyectos</span
-      > al mismo tiempo y adaptarme rápidamente a <span class="negrita"
-        >nuevas tecnologías</span
-      >.
-    </p>
-    <p class="sobre__mi__titulo__contenido">
-      He trabajado en proyectos desde la <span class="negrita"
-        >conceptualización hasta la implementación</span
-      >, asegurándome de cumplir con los plazos y superar las expectativas de
-      los clientes. Mi recorrido profesional me ha permitido
-      <span class="negrita">crecer y aprender</span> constantemente, y siempre estoy
-      buscando nuevas oportunidades para <span class="negrita"
-        >mejorar y expandir</span
-      > mis conocimientos.
-    </p>
-  </div>
+  <Header secciones={seccionesIndex} />
+  <main>
+    <h1>Portfolio <span class="linea">- Francisco Costanzo</span></h1>
+    <div class="btns__container">
+      <p>Experiencia en:</p>
+      <a href="" class="btn">Programación</a>
+      <a href="" class="btn">Diseño Gráfico</a>
+    </div>
+    <div class="sobre__mi">
+      <h2 class="sobre__mi__titulo">Sobre Mí</h2>
+      <p class="sobre__mi__titulo__contenido">
+        Soy <span class="negrita">Francisco Costanzo</span>, un profesional
+        apasionado por el <span class="negrita">diseño gráfico</span> y la <span
+          class="negrita">programación</span
+        >. A lo largo de mi carrera, he tenido la oportunidad de trabajar en
+        diversos proyectos que me han permitido desarrollar una amplia gama de
+        habilidades.
+      </p>
+      <p class="sobre__mi__titulo__contenido">
+        Mis cualidades incluyen la <span class="negrita"
+          >atención al detalle</span
+        >, la <span class="negrita">creatividad</span> y la capacidad de <span
+          class="negrita">resolver problemas complejos</span
+        > de manera efectiva. Sin embargo, también he enfrentado desafíos, como <span
+          class="negrita">equilibrar múltiples proyectos</span
+        > al mismo tiempo y adaptarme rápidamente a <span class="negrita"
+          >nuevas tecnologías</span
+        >.
+      </p>
+      <p class="sobre__mi__titulo__contenido">
+        He trabajado en proyectos desde la <span class="negrita"
+          >conceptualización hasta la implementación</span
+        >, asegurándome de cumplir con los plazos y superar las expectativas de
+        los clientes. Mi recorrido profesional me ha permitido
+        <span class="negrita">crecer y aprender</span> constantemente, y siempre
+        estoy buscando nuevas oportunidades para <span class="negrita"
+          >mejorar y expandir</span
+        > mis conocimientos.
+      </p>
+    </div>
+  </main>
 </Layout>
 
 <style lang="scss">
@@ -140,7 +149,7 @@ import Layout from "../layouts/Layout.astro";
     h1 {
       text-align: center;
     }
-    .btns__container{
+    .btns__container {
       margin: 0 0 20px 0;
       display: flex;
       flex-direction: column;
@@ -149,15 +158,15 @@ import Layout from "../layouts/Layout.astro";
       text-align: center;
 
       p {
-      font-size: 25px;
-      text-align: center;
-    }
+        font-size: 25px;
+        text-align: center;
+      }
 
-    .btn {
-      width: 100%;
-      padding: 0.5rem 1rem;
-      margin: 0 0 14px 0;
-    }
+      .btn {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        margin: 0 0 14px 0;
+      }
     }
     .sobre__mi {
       padding-top: 30px;

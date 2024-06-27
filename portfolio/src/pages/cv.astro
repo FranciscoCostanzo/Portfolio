@@ -1,0 +1,308 @@
+---
+import Layout from "../layouts/Layout.astro";
+const seccionesIndex = [
+  { href: "/", texto: "Sobre Mí" },
+  { href: "/cv", texto: "CV" },
+];
+import Header from "../components/Header.astro";
+---
+
+<Layout title="CV - Francisco Costanzo">
+  <Header secciones={seccionesIndex} />
+
+  <main id="main-content">
+    <section class="about-me">
+      <h1>Francisco Costanzo</h1>
+      <p>
+        Soy un joven <strong>programador</strong> y <strong>diseñador</strong> entusiasta
+        de la tecnología, atento, proactivo, cuidadoso, prolijo y perfeccionista.
+        Prácticamente todas mis habilidades fueron desarrolladas con experiencia
+        laboral ya que soy
+        <strong>freelance</strong> y muy <strong>autodidacta</strong>.
+      </p>
+    </section>
+    <hr />
+    <section class="skills">
+      <h2>Habilidades</h2>
+      <h3>Diseño Gráfico</h3>
+      <ul>
+        <li>
+          Paquete Adobe: <strong>Photoshop</strong>, <strong>Illustrator</strong
+          >, <strong>Premiere Pro</strong>
+        </li>
+        <li><strong>Figma</strong></li>
+        <li><strong>Canva</strong></li>
+      </ul>
+      <h3>Programación</h3>
+      <ul>
+        <li>
+          <strong>JavaScript</strong>, <strong>React</strong>, <strong
+            >React Native</strong
+          >, <strong>Node.js</strong>, <strong>Express.js</strong>
+        </li>
+        <li>
+          <strong>MySQL</strong>, <strong>MongoDB</strong>, <strong
+            >SQLite</strong
+          >
+        </li>
+        <li>
+          <strong>CSS3</strong>, <strong>HTML5</strong>, <strong>SCSS</strong>
+        </li>
+        <li><strong>ElectronJS</strong>, <strong>AstroJS 4</strong></li>
+      </ul>
+      <h3>Empresariales</h3>
+      <ul>
+        <li>Paquete Office: <strong>Excel</strong> (especialidad)</li>
+      </ul>
+    </section>
+    <hr />
+    <section class="education">
+      <h2>Estudios</h2>
+      <ul>
+        <li>
+          <strong>Tecnicatura en Desarrollo de Software</strong>, IFTS N°16 (En
+          curso)
+        </li>
+        <li>
+          <strong>CoderHouse</strong>: Desarrollo Web, JavaScript, React,
+          Desarrollo de aplicaciones (Terminados)
+        </li>
+        <li>
+          <strong>EducaciónIT</strong>:Introducción al
+          lenguaje de Programación, Fundamentos del Diseño Gráfico, Google
+          Analytics, UX, Paradigma de Objetos, Javascript Avanzado, Photoshop CC
+          2024, Protocolo HTTPS, UI, Git, Responsive Web, Illustrator CC 2024 (Terminados)
+        </li>
+      </ul>
+    </section>
+    <hr />
+    <section class="experience">
+      <h2>Experiencia Laboral</h2>
+      <ul>
+        <li>
+          <strong>Freelance</strong>
+          <p>
+            Desarrollo de una <strong>aplicación desktop</strong> con <strong
+              >Node</strong
+            >, <strong>JavaScript</strong>, <strong>React</strong>, <strong
+              >SCSS</strong
+            >
+            y <strong>ElectronJS</strong> para control de stock y pagos de clientes.
+            <a
+              href="https://github.com/CarpinchoRecu/tapon-app-desktop"
+              target="_blank">Ver en GitHub</a
+            >
+          </p>
+        </li>
+        <li>
+          <strong>ASES Salud SRL</strong>
+          <p>
+            Trabajo en <strong>campañas de marketing</strong> y <strong
+              >diseño de página web</strong
+            >, así como placas, flyers, historias de redes sociales. <a
+              href="https://asessaludsrl.com/"
+              target="_blank">Ver página web</a
+            >, <a href="https://www.instagram.com/asessaludsrl/" target="_blank"
+              >Instagram</a
+            >, <a
+              href="https://www.facebook.com/profile.php?id=100094507124115"
+              target="_blank">Facebook</a
+            >
+          </p>
+        </li>
+      </ul>
+    </section>
+    <hr />
+    <section class="languages">
+      <h2>Idiomas</h2>
+      <p>Español Latino</p>
+    </section>
+    <hr />
+    <section class="contact">
+      <h2>Contacto</h2>
+      <ul>
+        <li>
+          <strong>WhatsApp</strong>: <a
+            href="https://api.whatsapp.com/send?phone=5492346657718&text=Hola%20vi%20tu%20CV%20o%20Portfolio%20y%20me%20interesa%20tu%20trabajo"
+            target="_blank"
+            rel="noopener noreferrer">+54 9 2346 65-7718</a
+          >
+        </li>
+        <li>
+          <strong>GitHub</strong>: <a
+            href="https://github.com/CarpinchoRecu"
+            target="_blank">CarpinchoRecu</a
+          >
+        </li>
+        <li>
+          <strong>Email</strong>: <a
+            href="mailto:franciscocostanzo663@gmail.com"
+            >franciscocostanzo663@gmail.com</a
+          >
+        </li>
+        <li>
+          <strong>Instagram</strong>: <a
+            href="https://www.instagram.com/francisco_costanzo"
+            target="_blank">@francisco_costanzo</a
+          >
+        </li>
+        <li>
+          <strong>LinkedIn</strong>: <a
+            href="https://www.linkedin.com/in/francisco-costanzo-102207261/"
+            target="_blank">Francisco Costanzo</a
+          >
+        </li>
+      </ul>
+    </section>
+    <hr />
+  </main>
+
+  <button id="download-pdf">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-download"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  </button>
+</Layout>
+
+<script>
+  import jsPDF from "jspdf";
+  import html2canvas from "html2canvas";
+
+  document.getElementById("download-pdf").addEventListener("click", () => {
+    const mainContent = document.getElementById("main-content");
+
+    document.getElementById("download-pdf").style.display = "none"; // Ocultar el botón
+
+    html2canvas(mainContent).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save("CV_Francisco_Costanzo.pdf");
+
+      document.getElementById("download-pdf").style.display = "block"; // Mostrar el botón nuevamente
+    });
+  });
+</script>
+
+<style lang="scss">
+  $color-nevada: (
+    50: #f5f6f6,
+    100: #e5e8e8,
+    200: #ced3d3,
+    300: #abb4b5,
+    400: #818d8f,
+    500: #626d6f,
+    600: #576063,
+    700: #4b5153,
+    800: #424748,
+    900: #3a3e3f,
+    950: #242728,
+    shadow: #2427284d,
+  );
+
+  @function color-nevada($shade) {
+    @return map-get($color-nevada, $shade);
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: color-nevada(950);
+  }
+
+  h1 {
+    font-size: 36px; // Aumentado para el PDF
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 30px; // Aumentado para el PDF
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    font-size: 24px; // Aumentado para el PDF
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: color-nevada(500);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  section {
+    margin-bottom: 2em;
+  }
+
+  .about-me p,
+  .skills ul,
+  .education ul,
+  .experience ul,
+  .languages p,
+  .contact ul {
+    font-size: 18px; // Aumentado para el PDF
+    line-height: 1.6;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: color-nevada(400);
+    margin: 2em 0;
+  }
+
+  #download-pdf {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: color-nevada(700);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  #download-pdf:hover {
+    background-color: color-nevada(800);
+  }
+
+  #download-pdf svg {
+    width: 24px;
+    height: 24px;
+  }
+</style>
