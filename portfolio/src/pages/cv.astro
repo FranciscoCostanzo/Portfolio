@@ -95,7 +95,7 @@ import Header from "../components/Header.astro";
           </p>
         </li>
         <li>
-          <strong>ASES Salud SRL</strong>
+          <strong>AsesSalud S.R.L</strong>
           <p>
             Trabajo en <strong>campañas de marketing</strong> y <strong
               >diseño de página web</strong
@@ -158,19 +158,12 @@ import Header from "../components/Header.astro";
   </main>
 
   <button id="download-pdf">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="feather feather-download"
-    >
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-download" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#f5f6f6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+      <path d="M12 17v-6" />
+      <path d="M9.5 14.5l2.5 2.5l2.5 -2.5" />
     </svg>
   </button>
 </Layout>
@@ -184,7 +177,9 @@ import Header from "../components/Header.astro";
 
     document.getElementById("download-pdf").style.display = "none"; // Ocultar el botón
 
-    html2canvas(mainContent).then((canvas) => {
+    html2canvas(mainContent, {
+      scale: 2, // Aumentar la escala para mayor calidad
+    }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -288,13 +283,13 @@ import Header from "../components/Header.astro";
     background-color: color-nevada(700);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 60px; // Aumentado para el tamaño responsive
+    height: 60px; // Aumentado para el tamaño responsive
   }
 
   #download-pdf:hover {
@@ -302,7 +297,34 @@ import Header from "../components/Header.astro";
   }
 
   #download-pdf svg {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    .about-me p,
+    .skills ul,
+    .education ul,
+    .experience ul,
+    .languages p,
+    .contact ul {
+      font-size: 16px;
+    }
   }
 </style>

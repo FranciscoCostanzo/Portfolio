@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+import Galeria from "../components/Galeria.astro";
+
+const seccionesDiseno = [
+  { href: "#redes", texto: "Redes Sociales" },
+  { href: "#logos", texto: "Logos" },
+  { href: "#paginas", texto: "UX/UI - Paginas web" },
+  { href: "#habilidades", texto: "Habilidades" },
+];
+
+const projects = [
+  {
+    title: "Proyecto 1",
+    subtitle: "Diseño de Logo",
+    content: "Un diseño de logo para una empresa de tecnología.",
+    images: [
+      "/path/to/image1.jpg",
+      "/path/to/image2.jpg",
+      "/path/to/image3.jpg",
+    ],
+  },
+  {
+    title: "Proyecto 2",
+    subtitle: "Branding",
+    content: "Desarrollo de la identidad de marca para una startup.",
+    images: [
+      "/path/to/image4.jpg",
+      "/path/to/image5.jpg",
+      "/path/to/image6.jpg",
+    ],
+  },
+];
+---
+
+<Layout title="Diseño Gráfico - Francisco Costanzo">
+  <Header secciones={seccionesDiseno} />
+  <main>
+    <h1>
+      Portfolio de Diseño Gráfico <span class="linea"
+        >- Francisco Costanzo</span>
+    </h1>
+    <h2>Preyectos</h2>
+    {projects.map((project) => <Card {...project} />)}
+  </main>
+  <Galeria />
+</Layout>
+
+<style lang="scss">
+  $color-nevada: (
+    50: #f5f6f6,
+    100: #e5e8e8,
+    200: #ced3d3,
+    300: #abb4b5,
+    400: #818d8f,
+    500: #626d6f,
+    600: #576063,
+    700: #4b5153,
+    800: #424748,
+    900: #3a3e3f,
+    950: #242728,
+    shadow: #2427284d,
+  );
+
+  @function color-nevada($shade) {
+    @return map-get($color-nevada, $shade);
+  }
+
+  h1 {
+    color: color-nevada(950);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    @media (max-width: 1000px) {
+      .linea {
+        display: flex;
+        opacity: 0;
+        height: 10px;
+      }
+    }
+  }
+</style>

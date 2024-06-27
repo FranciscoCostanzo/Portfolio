@@ -12,7 +12,17 @@ import Whatsapp from "../../public/assets/logos/Wp.svg";
 import Yo from "../../public/assets/yo.jpg";
 
 const enlacesContacto = [
-{
+  {
+    href: "https://www.linkedin.com/in/francisco-costanzo-102207261/",
+    icon: Linkedin.src,
+    alt: "LinkedIn",
+  },
+  {
+    href: "https://github.com/CarpinchoRecu",
+    icon: Github.src,
+    alt: "GitHub",
+  },
+  {
     href: "https://www.instagram.com/francisco_costanzo",
     icon: Whatsapp.src,
     alt: "Whatsapp",
@@ -22,20 +32,11 @@ const enlacesContacto = [
     icon: Instagram.src,
     alt: "Instagram",
   },
-  {
-    href: "https://www.linkedin.com/in/francisco-costanzo-102207261/",
-    icon: Linkedin.src,
-    alt: "LinkedIn",
-  },
+
   {
     href: "mailto:franciscocostanzo663@gmail.com",
     icon: Mail.src,
     alt: "Email",
-  },
-  {
-    href: "https://github.com/CarpinchoRecu",
-    icon: Github.src,
-    alt: "GitHub",
   },
 ];
 ---
@@ -96,13 +97,11 @@ const enlacesContacto = [
     </div>
   </div>
   <div class="menu__content">
-    <img src={Yo.src} alt="Tu Foto" />
+    <a href="/"><img src={Yo.src} alt="Tu Foto" /></a>
     <nav>
-      {
-        secciones.map((seccion) => (
+      {secciones.map((seccion) =>
           <a href={seccion.href}>{seccion.texto}</a>
-        ))
-      }
+       )}
     </nav>
 
     <div class="enlaces-contacto">
@@ -240,7 +239,7 @@ const enlacesContacto = [
             width: 50px;
             height: 50px;
             z-index: -1;
-            a{
+            a {
               width: 90%;
               opacity: 0;
             }
@@ -254,20 +253,19 @@ const enlacesContacto = [
           height: auto;
           padding: 8px;
           display: flex !important;
-          a{
+          a {
             opacity: 1;
           }
         }
       }
-
 
       .nombre {
         display: none;
         font-size: 20px;
         font-weight: bold;
         @media (max-width: 1000px) {
-          display: block; 
-      }
+          display: block;
+        }
       }
 
       .menu__burger {
@@ -355,7 +353,6 @@ const enlacesContacto = [
         justify-content: center;
         gap: 1rem;
         margin-bottom: 10rem;
-  
 
         @media (max-width: 1000px) {
           align-items: center;
@@ -372,7 +369,7 @@ const enlacesContacto = [
           transition: 0.3s ease;
           @media (max-width: 1000px) {
             text-align: center;
-            border-radius:9px;
+            border-radius: 9px;
             width: 90%;
             background-color: color-nevada(950);
           }
