@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
 import Galeria from "../components/Galeria.astro";
+import Galectro from "../../public/ImgProyectosDineno/GalectroGeneral.PNG"
 
 const seccionesDiseno = [
   { href: "#redes", texto: "Redes Sociales" },
@@ -17,7 +18,7 @@ const projects = [
     subtitle: "Diseño de Logo",
     content: "Un diseño de logo para una empresa de tecnología.",
     images: [
-      "/path/to/image1.jpg",
+      Galectro.src,
       "/path/to/image2.jpg",
       "/path/to/image3.jpg",
     ],
