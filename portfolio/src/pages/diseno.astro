@@ -1,37 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Card from "../components/Card.astro";
-import Galeria from "../components/Galeria.astro";
-import Galectro from "../../public/ImgProyectosDineno/GalectroGeneral.PNG"
+import Card from "../components/Card.jsx";
+import galectro1 from "../../public/ImgProyectosDineno/galectro1.jpg";
+import galectro2 from "../../public/ImgProyectosDineno/galectro2.jpg";
+import galectro3 from "../../public/ImgProyectosDineno/galectro3.jpg";
+import rafa1 from "../../public/ImgProyectosDineno/rafa1.jpg";
+import rafa2 from "../../public/ImgProyectosDineno/rafa2.jpg";
+import rafa3 from "../../public/ImgProyectosDineno/rafa3.jpg";
 
 const seccionesDiseno = [
   { href: "#redes", texto: "Redes Sociales" },
   { href: "#logos", texto: "Logos" },
   { href: "#paginas", texto: "UX/UI - Paginas web" },
+  { href: "#banners", texto: "Banners - Plotters" },
   { href: "#habilidades", texto: "Habilidades" },
 ];
 
-const projects = [
+const proyectosRedes = [
   {
-    title: "Proyecto 1",
-    subtitle: "Diseño de Logo",
-    content: "Un diseño de logo para una empresa de tecnología.",
-    images: [
-      Galectro.src,
-      "/path/to/image2.jpg",
-      "/path/to/image3.jpg",
-    ],
+    title: "Galectro - Materiales Electricos",
+    subtitle: "Diseño gráfico en redes sociales",
+    content: "Hace meses vengo trabajando en los diseños para redes sociales de esta marca de materiales eléctricos. Conjunto con un equipo de marketing sigo las órdenes del community manager para hacer los diseños bajo mi propia impronta.",
+    images: [galectro1.src, galectro2.src, galectro3.src],
+    instagram: "https://www.instagram.com/galectro",
+    facebook: "https://www.facebook.com/galectro",
+    website: "https://www.galectro.com",
   },
   {
-    title: "Proyecto 2",
-    subtitle: "Branding",
-    content: "Desarrollo de la identidad de marca para una startup.",
+    title: "Iphone - Store",
+    subtitle: "Branding y Diseno",
+    content: "Esta marca confio en mi desde un principio para el marketing y el diseno de sus redes sociales y logre escalar de 0 a 1600 seguidores en solo 3 meses",
     images: [
-      "/path/to/image4.jpg",
-      "/path/to/image5.jpg",
-      "/path/to/image6.jpg",
+      rafa1.src,
+      rafa2.src,
+      rafa3.src,
     ],
+    instagram: "https://www.instagram.com/proyecto2",
+    website: "https://www.proyecto2.com",
   },
 ];
 ---
@@ -43,10 +49,56 @@ const projects = [
       Portfolio de Diseño Gráfico <span class="linea"
         >- Francisco Costanzo</span>
     </h1>
-    <h2>Preyectos</h2>
-    {projects.map((project) => <Card {...project} />)}
+    <hr />
+
+    <section id="redes">
+      <h2>Redes Sociales</h2>
+      <div class="projects">
+        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="logos">
+      <h2>Logos</h2>
+      <div class="projects">
+        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="paginas">
+      <h2>UX/UI - Páginas Web</h2>
+      <div class="projects">
+        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="banners">
+      <h2>Banners - Plotters</h2>
+      <div class="projects">
+        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <ul>
+          <li>Diseño Gráfico</li>
+          <li>Desarrollo Web</li>
+          <li>Branding</li>
+          <li>Marketing Digital</li>
+        </ul>
+      </div>
+    </section>
   </main>
-  <Galeria />
 </Layout>
 
 <style lang="scss">
@@ -82,6 +134,64 @@ const projects = [
         opacity: 0;
         height: 10px;
       }
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  .skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    li {
+      background: color-nevada(100);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: color-nevada(900);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: color-nevada(300);
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .projects {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
