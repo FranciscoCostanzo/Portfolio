@@ -2,42 +2,100 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.jsx";
-import galectro1 from "../../public/ImgProyectosDineno/galectro1.jpg";
-import galectro2 from "../../public/ImgProyectosDineno/galectro2.jpg";
-import galectro3 from "../../public/ImgProyectosDineno/galectro3.jpg";
-import rafa1 from "../../public/ImgProyectosDineno/rafa1.jpg";
-import rafa2 from "../../public/ImgProyectosDineno/rafa2.jpg";
-import rafa3 from "../../public/ImgProyectosDineno/rafa3.jpg";
+
+//logos
+import asesLogo from "../../public/ImgProyectosDineno/Logos/asesLogo.webp";
+import asesLogo2 from "../../public/ImgProyectosDineno/Logos/asesLogo2.webp";
+import ambuLogo from "../../public/ImgProyectosDineno/Logos/logoAmbu.webp";
+import viajesLogo from "../../public/ImgProyectosDineno/Logos/viajesLogo.webp";
+
+//redes
+import galectro1 from "../../public/ImgProyectosDineno/Redes/galectro1.webp";
+import galectro2 from "../../public/ImgProyectosDineno/Redes/galectro2.webp";
+import galectro3 from "../../public/ImgProyectosDineno/Redes/galectro3.webp";
+import rafa1 from "../../public/ImgProyectosDineno/Redes/rafa1.webp";
+import rafa2 from "../../public/ImgProyectosDineno/Redes/rafa2.webp";
+import rafa3 from "../../public/ImgProyectosDineno/Redes/rafa3.webp";
+import ambu1 from "../../public/ImgProyectosDineno/Redes/ambu1.webp";
+import ambu2 from "../../public/ImgProyectosDineno/Redes/ambu2.webp";
+import ambu3 from "../../public/ImgProyectosDineno/Redes/ambu3.webp";
+import ambu4 from "../../public/ImgProyectosDineno/Redes/ambu4.webp";
+import ases1 from "../../public/ImgProyectosDineno/Redes/ases1.webp";
+import ases2 from "../../public/ImgProyectosDineno/Redes/ases2.webp";
+import ases3 from "../../public/ImgProyectosDineno/Redes/ases3.webp";
+import ases4 from "../../public/ImgProyectosDineno/Redes/ases4.webp";
 
 const seccionesDiseno = [
   { href: "#redes", texto: "Redes Sociales" },
   { href: "#logos", texto: "Logos" },
-  { href: "#paginas", texto: "UX/UI - Paginas web" },
-  { href: "#banners", texto: "Banners - Plotters" },
+  { href: "#paginas", texto: "UX/UI - Páginas web" },
   { href: "#habilidades", texto: "Habilidades" },
 ];
 
 const proyectosRedes = [
   {
-    title: "Galectro - Materiales Electricos",
+    title: "Galectro - Materiales Eléctricos",
     subtitle: "Diseño gráfico en redes sociales",
-    content: "Hace meses vengo trabajando en los diseños para redes sociales de esta marca de materiales eléctricos. Conjunto con un equipo de marketing sigo las órdenes del community manager para hacer los diseños bajo mi propia impronta.",
-    images: [galectro1.src, galectro2.src, galectro3.src],
-    instagram: "https://www.instagram.com/galectro",
-    facebook: "https://www.facebook.com/galectro",
-    website: "https://www.galectro.com",
+    content:
+      "Hace meses vengo trabajando en los diseños para redes sociales de esta marca de materiales eléctricos. Junto con un equipo de marketing, sigo las órdenes del community manager para hacer los diseños bajo mi propia impronta.",
+    images: [galectro3.src, galectro2.src, galectro1.src],
+    instagram: "https://www.instagram.com/galectromateriales",
+    facebook: "https://www.facebook.com/galectrodistribuidora",
+    website: "https://www.galectro.com.ar/",
   },
   {
-    title: "Iphone - Store",
-    subtitle: "Branding y Diseno",
-    content: "Esta marca confio en mi desde un principio para el marketing y el diseno de sus redes sociales y logre escalar de 0 a 1600 seguidores en solo 3 meses",
-    images: [
-      rafa1.src,
-      rafa2.src,
-      rafa3.src,
-    ],
-    instagram: "https://www.instagram.com/proyecto2",
-    website: "https://www.proyecto2.com",
+    title: "iPhone - Store",
+    subtitle: "Branding y Diseño",
+    content:
+      "Esta marca confió en mí desde un principio para el marketing y el diseño de sus redes sociales. Logré escalar de 0 a 1600 seguidores en solo 3 meses.",
+    images: [rafa1.src, rafa2.src, rafa3.src],
+    instagram: "https://www.instagram.com/iphone_companystore/",
+    website: "https://listadeprecios.onrender.com/",
+  },
+  {
+    title: "Ambu Virtual - Rehabilitación de adicciones",
+    subtitle: "Branding y Diseño",
+    content:
+      "Este es un proyecto en el que participé desde el inicio, dando vida y conciencia a las voces de profesionales de la salud mental, ayudándolos a llegar a más pacientes. Les di personalidad y empatía con mis diseños desde un primer momento.",
+    images: [ambu1.src, ambu2.src, ambu3.src, ambu4.src],
+    instagram: "https://www.instagram.com/ambuvirtual",
+    website: "https://ambuvirtual.com/",
+  },
+  {
+    title: "AsesSalud - Asesoría de coberturas médicas",
+    subtitle: "Branding y Diseño",
+    content:
+      "Esta importante empresa me contrató para escalar sus redes sociales y poder implementar mis conocimientos de diseño con ellos. Implementé una estética súper marcada y delicada.",
+    images: [ases1.src, ases2.src, ases3.src, ases4.src],
+    instagram: "https://www.instagram.com/asessaludsrl/",
+  },
+];
+
+const proyectosLogos = [
+  {
+    title: "Ambu Virtual - Rehabilitación de adicciones",
+    subtitle: "Logo",
+    content:
+      "ya que participe desde el principio para .",
+    images: [ambuLogo.src],
+    instagram: "https://www.instagram.com/ambuvirtual",
+    website: "https://ambuvirtual.com/",
+  },
+  {
+    title: "AsesSalud - Asesoría de coberturas médicas",
+    subtitle: "Logo",
+    content:
+      "Esta empresa anteriormente se llamaba Grupo Beltran S.R.L. pero quisieron dat un giro de rosca a su estetica y pude formar parte de ello implementando este logo tan marcado.",
+      images: [asesLogo.src, asesLogo2.src],
+      instagram: "https://www.instagram.com/asessaludsrl/",
+  },
+  {
+    title: "Viajes 9DJ - Fletes, mudanzas y remisería",
+    subtitle: "Logo",
+    content:
+      "Esta empresa no tenia precencia en redes sociales por que se contactaron conmigo para poder tener una identidad de marca y creear su logo.",
+    images: [viajesLogo.src],
+    instagram: "https://www.instagram.com/asessaludsrl/",
   },
 ];
 ---
@@ -46,55 +104,40 @@ const proyectosRedes = [
   <Header secciones={seccionesDiseno} />
   <main>
     <h1>
-      Portfolio de Diseño Gráfico <span class="linea"
-        >- Francisco Costanzo</span>
+      Portfolio de Diseño Gráfico <span class="linea">- Francisco Costanzo</span
+      >
     </h1>
     <hr />
-
     <section id="redes">
       <h2>Redes Sociales</h2>
       <div class="projects">
         {proyectosRedes.map((project) => <Card client:visible {...project} />)}
       </div>
     </section>
-
     <hr />
-
     <section id="logos">
       <h2>Logos</h2>
       <div class="projects">
-        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
+        {proyectosLogos.map((project) => <Card client:visible {...project} />)}
       </div>
     </section>
-
     <hr />
-
     <section id="paginas">
       <h2>UX/UI - Páginas Web</h2>
       <div class="projects">
         {proyectosRedes.map((project) => <Card client:visible {...project} />)}
       </div>
     </section>
-
     <hr />
-
-    <section id="banners">
-      <h2>Banners - Plotters</h2>
-      <div class="projects">
-        {proyectosRedes.map((project) => <Card client:visible {...project} />)}
-      </div>
-    </section>
-
-    <hr />
-
     <section id="habilidades">
       <h2>Habilidades</h2>
       <div class="skills">
         <ul>
-          <li>Diseño Gráfico</li>
           <li>Desarrollo Web</li>
-          <li>Branding</li>
-          <li>Marketing Digital</li>
+          <li>Paquete Adobe: Photoshop, Premiere Pro, Illustrator, Acrobat</li>
+          <li>Figma - para diseños web o maquetas de páginas web</li>
+          <li>Canva</li>
+          <li>DaVinci Resolve</li>
         </ul>
       </div>
     </section>
@@ -137,10 +180,19 @@ const proyectosRedes = [
     }
   }
 
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2.2rem;
     text-align: center;
+    border-bottom: 1px solid;
+    width: fit-content;
   }
 
   .projects {
