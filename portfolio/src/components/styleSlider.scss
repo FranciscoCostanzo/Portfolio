@@ -1,0 +1,121 @@
+$color-nevada: (
+    50: #f5f6f6,
+    100: #e5e8e8,
+    200: #ced3d3,
+    300: #abb4b5,
+    400: #818d8f,
+    500: #626d6f,
+    600: #576063,
+    700: #4b5153,
+    800: #424748,
+    900: #3a3e3f,
+    950: #242728,
+    shadow: #2427284d,
+);
+
+@function color-nevada($shade) {
+    @return map-get($color-nevada, $shade);
+}
+
+.slider-wrapper {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: color-nevada(50);
+}
+
+.slider {
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+}
+
+.prev,
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    background-color: color-nevada(200);
+
+    svg {
+        stroke: color-nevada(950);
+        width: 55px;
+        height: 55px;
+    }
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: color-nevada(300);
+}
+
+.close-selected {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: color-nevada(900);
+    font-size: 40px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .prev,
+    .next {
+        width: 40px;
+        height: 40px;
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

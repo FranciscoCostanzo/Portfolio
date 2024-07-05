@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./styleGaleria.scss";
+import Slider from "./Slider.jsx";
 
 const Galeria = ({ images, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -78,9 +79,27 @@ const Galeria = ({ images, onClose }) => {
           )}
         </>
       ) : (
-        <section className="overlay">
-
-        </section>
+        <>
+          {images.length >= 2 ? (
+            <section className="overlay">
+              <article className="enlarged-image-container">
+                <button className="close-selected" onClick={onClose}>
+                  &times;
+                </button>
+                <Slider imagenes={images} />
+              </article>
+            </section>
+          ) : (
+            <section className="overlay">
+              <article className="enlarged-image-container">
+                <img src={images} alt="Selected" className="enlarged-image" />
+                <button className="close-selected" onClick={onClose}>
+                  &times;
+                </button>
+              </article>
+            </section>
+          )}
+        </>
       )}
     </>
   );

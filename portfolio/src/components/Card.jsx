@@ -2,7 +2,7 @@ import { useState } from 'react';
 import "./styleCard.scss";
 import Galeria from './Galeria.jsx';
 
-const Card = ({ title, subtitle, content, images, instagram, facebook, website }) => {
+const Card = ({ title, subtitle, content, images, instagram, facebook, website, github }) => {
   const [abrirGaleria, setAbrirGaleria] = useState(false);
 
   const handleAbrirGaleria = () => {
@@ -53,6 +53,14 @@ const Card = ({ title, subtitle, content, images, instagram, facebook, website }
                 <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4" />
                 <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4" />
                 <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4" />
+              </svg>
+            </a>
+          )}
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
               </svg>
             </a>
           )}
