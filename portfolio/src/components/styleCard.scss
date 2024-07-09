@@ -24,7 +24,8 @@ $color-nevada: (
   padding: 1px;
   background-size: 400%;
   border-radius: 7px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   text-decoration: none;
   line-height: 1.4;
   padding: calc(1.5rem - 1px);
@@ -72,14 +73,50 @@ $color-nevada: (
       width: 30px;
       height: 30px;
       transition: 0.2s ease;
+
       &:hover {
-        scale: 1.1;
+        transform: scale(1.1);
       }
 
       svg {
         width: 100%;
         height: auto;
         stroke: color-nevada(600);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .link-card {
+    padding: 1rem;
+    max-width: 100%;
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .card-image {
+      margin-top: 0.5rem;
+    }
+
+    .social-links {
+      a {
+        width: 25px;
+        height: 25px;
+
+        svg {
+          width: 25px;
+          height: auto;
+        }
       }
     }
   }

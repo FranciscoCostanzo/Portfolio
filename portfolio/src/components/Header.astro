@@ -99,9 +99,7 @@ const enlacesContacto = [
   <div class="menu__content">
     <a href="/"><img src={Yo.src} alt="Tu Foto" /></a>
     <nav>
-      {secciones.map((seccion) =>
-          <a href={seccion.href}>{seccion.texto}</a>
-       )}
+      {secciones.map((seccion) => <a href={seccion.href}>{seccion.texto}</a>)}
     </nav>
 
     <div class="enlaces-contacto">
@@ -144,8 +142,6 @@ const enlacesContacto = [
 
   header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -158,6 +154,7 @@ const enlacesContacto = [
 
     @media (max-width: 1000px) {
       position: relative;
+    flex-direction: column;
       height: auto;
       width: 100%;
       height: 0;
@@ -204,7 +201,7 @@ const enlacesContacto = [
           display: none;
           flex-direction: column;
           gap: 1.1rem;
-          margin-top: 60px;
+          margin-top: 65px;
           a {
             display: flex;
             position: relative;
@@ -308,9 +305,7 @@ const enlacesContacto = [
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       width: 100%;
-      height: 100%;
       z-index: -2;
       @media (max-width: 1000px) {
         text-align: center;
@@ -327,7 +322,7 @@ const enlacesContacto = [
         border-radius: 50%;
         width: 150px;
         height: 150px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         transition: all 0.3s ease;
         @media (max-width: 1000px) {
           width: 110px;
@@ -352,7 +347,7 @@ const enlacesContacto = [
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        margin-bottom: 10rem;
+        margin-bottom: 3rem;
 
         @media (max-width: 1000px) {
           align-items: center;
@@ -383,13 +378,12 @@ const enlacesContacto = [
       }
 
       .enlaces-contacto {
-        margin-left: 30px;
+        margin-left: 10px;
         display: flex;
         flex-direction: column;
         justify-content: start;
         width: 100%;
-        gap: 1rem;
-        margin-bottom: 30px;
+        gap: 0.8rem;
         @media (max-width: 1000px) {
           display: none;
         }
@@ -410,8 +404,8 @@ const enlacesContacto = [
           img {
             margin: 0;
             border-radius: 0;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             transition: 0.3s ease;
           }
 
@@ -421,9 +415,10 @@ const enlacesContacto = [
             height: fit-content;
             background-color: color-nevada(950);
             color: color-nevada(50);
-            padding: 0.4rem 0.5rem;
+            padding: 0.3rem 0.4rem;
             border-radius: 8px;
-            font-size: 18px;
+            text-align: center;
+            font-size: 15px;
             white-space: nowrap;
             opacity: 0;
             transition: 0.3s ease;
