@@ -150,11 +150,15 @@ const enlacesContacto = [
     color: color-nevada(50);
     width: 250px;
     height: 100vh;
-    transition: width 0.5s ease;
+    border-bottom: 1px solid color-nevada(800);
+    transition:
+      top 0.3s ease,
+      width 0.5s ease;
+      
 
     @media (max-width: 1000px) {
-      position: relative;
-    flex-direction: column;
+      position: fixed;
+      flex-direction: column;
       height: auto;
       width: 100%;
       height: 0;
@@ -443,6 +447,8 @@ const enlacesContacto = [
     const menuContent = document.querySelector(".menu__content");
     const btnContacto = document.querySelector(".btn__contacto");
     const contactoContenido = document.querySelector(".contenido__contacto");
+    const header = document.querySelector("header");
+    let lastScrollTop = 0;
 
     menuToggle.addEventListener("click", function () {
       menuContent.classList.toggle("active");
@@ -451,5 +457,25 @@ const enlacesContacto = [
     btnContacto.addEventListener("click", function () {
       contactoContenido.classList.toggle("active2");
     });
+
+    const handleScrollVisible = () => {
+      if (window.innerWidth <= 1000) {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          header.style.top = "-70px"; // Oculta la barra de navegación
+          menuContent.classList.remove("active");
+        } else {
+          header.style.top = "0"; // Muestra la barra de navegación
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para Mobile o cuando se llega a la parte superior del documento
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollVisible, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollVisible);
+    };
   });
 </script>
