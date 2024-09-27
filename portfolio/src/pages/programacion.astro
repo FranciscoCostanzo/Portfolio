@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.jsx";
+
+const seccionesDiseno = [
+  { href: "#redes", texto: "Redes Sociales" },
+  { href: "#logos", texto: "Logos" },
+  { href: "#paginas", texto: "UX/UI - Páginas web" },
+  { href: "#habilidades", texto: "Habilidades" },
+];
+
+// const proyectosRedes = [
+//   {
+//     title: "Galectro - Materiales Eléctricos",
+//     subtitle: "Diseño gráfico en redes sociales",
+//     content:
+//       "Hace meses que trabajo en los diseños para redes sociales de esta marca de materiales eléctricos. Junto con un equipo de marketing, sigo las órdenes del community manager para crear los diseños bajo mi propia impronta.",
+//     images: [galectro3.src, galectro2.src, galectro1.src],
+//     instagram: "https://www.instagram.com/galectromateriales",
+//     facebook: "https://www.facebook.com/galectrodistribuidora",
+//     website: "https://www.galectro.com.ar/",
+//   },
+//   {
+//     title: "iPhone Store - Reventa de Productos Apple",
+//     subtitle: "Branding y Diseño",
+//     content:
+//       "Esta marca confió en mí desde el principio para el marketing y el diseño de sus redes sociales. Logré escalar de 0 a 1600 seguidores en solo 3 meses.",
+//     images: [rafa1.src, rafa2.src, rafa3.src],
+//     instagram: "https://www.instagram.com/iphone_companystore/",
+//     website: "https://listadeprecios.onrender.com/",
+//   },
+//   {
+//     title: "Ambu Virtual - Rehabilitación de Adicciones",
+//     subtitle: "Branding y Diseño",
+//     content:
+//       "Este es un proyecto en el que participé desde el inicio, dando vida y conciencia a las voces de profesionales de la salud mental y ayudándolos a llegar a más pacientes. Les di personalidad y empatía con mis diseños desde un primer momento.",
+//     images: [ambu1.src, ambu2.src, ambu3.src, ambu4.src],
+//     instagram: "https://www.instagram.com/ambuvirtual",
+//     website: "https://ambuvirtual.com/",
+//   },
+//   {
+//     title: "AsesSalud - Asesoría de Coberturas Médicas",
+//     subtitle: "Branding y Diseño",
+//     content:
+//       "Esta importante empresa me contrató para escalar sus redes sociales y aplicar mis conocimientos de diseño. Implementé una estética muy marcada y delicada.",
+//     images: [ases1.src, ases2.src, ases3.src, ases4.src],
+//     instagram: "https://www.instagram.com/asessaludsrl/",
+//   },
+// ];
+
+// const proyectosLogos = [
+//   {
+//     title: "Ambu Virtual - Rehabilitación de Adicciones",
+//     subtitle: "Logo",
+//     content:
+//       "Participé desde el principio con esta empresa de salud, siendo el creador de su identidad de marca y diseñando su logo.",
+//     images: [ambuLogo.src],
+//     instagram: "https://www.instagram.com/ambuvirtual",
+//     website: "https://ambuvirtual.com/",
+//   },
+//   {
+//     title: "AsesSalud - Asesoría de Coberturas Médicas",
+//     subtitle: "Logo",
+//     content:
+//       "Esta empresa anteriormente se llamaba Grupo Beltrán S.R.L. Quisieron dar un giro a su estética y pude formar parte de ello, implementando este logo tan distintivo.",
+//     images: [asesLogo.src, asesLogo2.src],
+//     instagram: "https://www.instagram.com/asessaludsrl/",
+//   },
+//   {
+//     title: "Viajes 9DJ - Fletes, Mudanzas y Remisería",
+//     subtitle: "Logo",
+//     content:
+//       "Esta empresa no tenía presencia en redes sociales, por lo que se contactaron conmigo para crear una identidad de marca y diseñar su logo.",
+//     images: [viajesLogo.src],
+//     instagram: "https://www.instagram.com/asessaludsrl/",
+//   },
+// ];
+
+// const proyectosPaginas = [
+//   {
+//     title: "Ambu Virtual - Rehabilitación de Adicciones",
+//     subtitle: "Página Web y UX/UI",
+//     content:
+//       "También creé la web completa y me encargué del mantenimiento de la misma. La desarrollé utilizando Figma para el diseño y AstroJS para la implementación.",
+//     images: [
+//       pagAmbu1.src,
+//       pagAmbu2.src,
+//       pagAmbu3.src,
+//       pagAmbu4.src,
+//       pagAmbu5.src,
+//     ],
+//     website: "https://ambuvirtual.com/",
+//     github: "https://github.com/CarpinchoRecu/AmbuVirtual",
+//   },
+//   {
+//     title: "Viajes 9DJ - Fletes, Mudanzas y Remisería",
+//     subtitle: "Landing Page para Recepción de Formularios",
+//     content:
+//       "Creé la web de esta empresa de viajes como una landing page para recibir formularios importantes relacionados con viajes y mudanzas grandes. Participé en el proyecto desde el principio, asegurando una experiencia de usuario óptima.",
+//     images: [pagViajes4.src, pagViajes2.src, pagViajes3.src, pagViajes1.src],
+//     website: "https://viajes9dj.com/",
+//     github: "https://github.com/CarpinchoRecu/viajes9dj",
+//   },
+//   {
+//     title: "iPhone Store - Reventa de Productos Apple",
+//     subtitle: "Página Web y UX/UI",
+//     content:
+//       "Desarrollé esta web con AstroJS para facilitar la consulta de precios y el inventario a los clientes de esta empresa revendedora de productos Apple.",
+//     images: [pagRafa3.src, pagRafa2.src, pagRafa1.src],
+//     website: "https://listadeprecios.onrender.com/",
+//     github: "https://github.com/CarpinchoRecu/ListaDePrecios",
+//   },
+//   {
+//     title: "Doti Seguros - Comercializadora de Seguros",
+//     subtitle: "Página Web y UX/UI",
+//     content:
+//       "Contacté a esta empresa, ya que no tenían presencia en línea. Creé su página web para establecer su identidad en internet y generar confianza entre sus clientes. La desarrollé utilizando HTML, CSS y JavaScript puro.",
+//     images: [pagDoti1.src, pagDoti2.src, pagDoti3.src, pagDoti4.src],
+//     website: "https://dotiasesorseguros.com/",
+//     github: "https://github.com/CarpinchoRecu/DotiJsPuro",
+//   },
+// ];
+---
+
+<Layout title="Diseño Gráfico - Francisco Costanzo">
+  <Header secciones={seccionesDiseno} />
+  <main>
+    <h1>
+      Portfolio de Diseño Programacion <span class="linea">- Francisco Costanzo</span
+      >
+    </h1>
+    <hr />
+    <section id="redes">
+      <h2>Paginas Web</h2>
+      <div class="projects">
+        <!-- {proyectosRedes.map((project) => <Card client:visible {...project} />)} -->
+      </div>
+    </section>
+    <hr />
+    <section id="logos">
+      <h2>Aplicaciones Web</h2>
+      <div class="projects">
+        <!-- {proyectosLogos.map((project) => <Card client:visible {...project} />)} -->
+      </div>
+    </section>
+    <hr />
+    <section id="paginas">
+      <h2>Aplicaciones Desktop</h2>
+      <div class="projects">
+        <!-- {
+
+          proyectosPaginas.map((project) => (
+            <Card client:visible {...project} />
+          ))
+        } -->
+      </div>
+    </section>
+    <hr />
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <ul>
+          <li>Desarrollo Web</li>
+          <li>JavaScript</li>
+          <li>React.JS</li>
+          <li>Astro.JS</li>
+          <li>Express</li>
+          <li>Node</li>
+          <li>Electron</li>
+          <li>PHP</li>
+          <li>Wordpress</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  $color-nevada: (
+    50: #f5f6f6,
+    100: #e5e8e8,
+    200: #ced3d3,
+    300: #abb4b5,
+    400: #818d8f,
+    500: #626d6f,
+    600: #576063,
+    700: #4b5153,
+    800: #424748,
+    900: #3a3e3f,
+    950: #242728,
+    shadow: #2427284d,
+  );
+
+  @function color-nevada($shade) {
+    @return map-get($color-nevada, $shade);
+  }
+
+  h1 {
+    color: color-nevada(950);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    @media (max-width: 1000px) {
+      .linea {
+        display: flex;
+        opacity: 0;
+        height: 10px;
+      }
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2.2rem;
+    text-align: center;
+    border-bottom: 1px solid;
+    width: fit-content;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  .skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+
+    li {
+      background: color-nevada(100);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: color-nevada(900);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: color-nevada(300);
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .projects {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
